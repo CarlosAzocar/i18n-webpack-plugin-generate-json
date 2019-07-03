@@ -128,7 +128,7 @@ function _clearUpObject(obj, key) {
 	if (_.isEmpty(_.get(obj, key))) {
 		obj = _.omit(obj, key);
 		if (key.includes(".")) {
-			_clearUpObject(obj, key.substring(0, key.lastIndexOf(".")));
+			obj = _clearUpObject(obj, key.substring(0, key.lastIndexOf(".")));
 		}
 	}
 	return obj;
